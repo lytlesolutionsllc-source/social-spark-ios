@@ -1,26 +1,14 @@
 import Foundation
 
-struct AppUser: Identifiable, Codable {
-    let id: String
+struct AppUser: Identifiable, Hashable {
+    let id: UUID
+    let name: String
     let email: String
-    let fullName: String
     let accountType: AccountType
-    let status: UserStatus
-    let createdAt: Date
-    let stripeCustomerId: String?
-    let stripeConnectedAccountId: String?
-    let profileImageUrl: String?
-    
-    enum AccountType: String, Codable {
-        case creator
-        case brand
-        case admin
-    }
-    
-    enum UserStatus: String, Codable {
-        case pending
-        case approved
-        case rejected
-        case suspended
+
+    enum AccountType: String, CaseIterable, Hashable {
+        case creator = "Creator"
+        case brand = "Brand"
+        case admin = "Admin"
     }
 }
