@@ -1,22 +1,14 @@
 import Foundation
 
-struct ProofSubmission: Identifiable, Codable {
-    let id: String
-    let missionId: String
-    let creatorId: String
-    let commentText: String?
-    let storyScreenshotUrl: String?
-    let repostScreenshotUrl: String?
-    let profileClickScreenshotUrl: String?
-    let linkClickProofUrl: String?
-    let notes: String?
-    let submittedAt: Date
-    let reviewStatus: ReviewStatus
-    let rejectionReason: String?
-    
-    enum ReviewStatus: String, Codable {
-        case pending
-        case approved
-        case rejected
+struct ProofSubmission: Identifiable, Hashable {
+    let id: UUID
+    let missionID: UUID
+    let notes: String
+    let status: ReviewStatus
+
+    enum ReviewStatus: String, Hashable {
+        case pending = "Pending Review"
+        case approved = "Approved"
+        case rejected = "Rejected"
     }
 }
