@@ -20,7 +20,7 @@ Creator-powered missions for brands that want real social momentum.
 
 ## Getting Started
 
-1. Open `SocialSpark.xcodeproj` in Xcode
+1. Open `SocialSpark.xcodeproj` in Xcode from the repository root (`social-spark-ios/SocialSpark.xcodeproj`)
 2. Select the `SocialSpark` scheme
 3. Run on iOS 16+ simulator or device
 
