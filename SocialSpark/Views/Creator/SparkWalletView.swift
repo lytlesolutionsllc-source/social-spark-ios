@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SparkWalletView: View {
-    @StateObject private var viewModel = CreatorDashboardViewModel()
+    @StateObject private var viewModel = SparkWalletViewModel()
 
     var body: some View {
         ScrollView {
