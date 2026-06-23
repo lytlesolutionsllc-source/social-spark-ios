@@ -22,10 +22,12 @@ jobs:
       - name: Show Xcode version
         run: xcodebuild -version
 
-      - name: Show schemes
-        run: xcodebuild -list -project SocialSpark.xcodeproj
+      - name: Show project and schemes
+        run: |
+          ls -la
+          xcodebuild -list -project SocialSpark.xcodeproj
 
-      - name: Build SocialSpark (iOS Simulator)
+      - name: Build SocialSpark (raw logs)
         run: |
           set -o pipefail
           xcodebuild \
@@ -34,4 +36,4 @@ jobs:
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 15' \
             -configuration Debug \
-            clean build | xcpretty
+            clean build
