@@ -20,7 +20,7 @@ struct ProofSubmissionView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Submitted")
                         .fontWeight(.semibold)
-                    Text("Status: Pending Review")
+                    Text("Status: \(mission.status.rawValue)")
                         .foregroundStyle(AppTheme.sparkBlue)
                 }
             }
