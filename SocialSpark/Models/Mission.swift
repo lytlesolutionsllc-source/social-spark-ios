@@ -6,8 +6,8 @@ struct Mission: Identifiable, Hashable {
     let brandName: String
     let description: String
     let totalReward: Int
-    let actions: [MissionAction]
-    let status: MissionStatus
+    var actions: [MissionAction]
+    var status: MissionStatus
 
     enum MissionStatus: String, Hashable {
         case available = "Available"

@@ -31,7 +31,9 @@ struct MissionDetailView: View {
                 }
 
                 SparkButton(title: "Start Spark Run", icon: "play.fill") {
-                    appState.path.append(.sparkRun(mission))
+                    var missionInProgress = mission
+                    missionInProgress.status = .inProgress
+                    appState.path.append(.sparkRun(missionInProgress))
                 }
             }
             .padding()

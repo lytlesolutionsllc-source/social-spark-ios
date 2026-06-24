@@ -15,6 +15,7 @@ struct SparkRunView: View {
                     .font(.title3.bold())
                     .foregroundStyle(AppTheme.white)
                 SparkProgressBar(progress: viewModel.progress)
+                    .animation(.easeInOut(duration: 0.25), value: viewModel.progress)
                 Text("\(viewModel.currentStep)/\(viewModel.steps.count) steps complete")
                     .foregroundStyle(AppTheme.mutedGray)
 
@@ -51,7 +52,9 @@ struct SparkRunView: View {
                     }
                 } else {
                     SparkButton(title: "Complete Next Step", icon: "checkmark") {
-                        viewModel.completeCurrentStep()
+                        withAnimation(.easeInOut(duration: 0.25)) {
+                            viewModel.completeCurrentStep()
+                        }
                     }
                 }
             }
